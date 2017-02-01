@@ -1,5 +1,5 @@
 *.xyz
-gmp_compare
+gmp_compare*
 *.0
 
 
