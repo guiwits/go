@@ -15,3 +15,6 @@ the length (in meters) between two grid points in the .xyz files.
 
 This program will take timeliness into account as well as the calculation that ignores the timeliness.
 
+Usage: /gmp_compare -predicted big_bear_2014_grid_pred.xyz -observed big_bear_2014_grid_obs.xyz -atime 3.59
+
+
