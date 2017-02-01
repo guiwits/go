@@ -2,6 +2,7 @@ This program compares the ground motion prediction of two ShakeMaps.
 "ShakeMap is a product of the U.S. Geological Survey Earthquake Hazards Program 
 in conjunction with regional seismic network operators. ShakeMap sites provide 
 near-real-time maps of ground motion and shaking intensity following significant earthquakes."
+
 [ShakeMap home](http://earthquake.usgs.gov/earthquakes/shakemap/)
 
 A ShakeMap generates an .xyz file associated with its data. This program 
