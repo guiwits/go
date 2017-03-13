@@ -100,6 +100,7 @@ func main() {
 		pVals[i][0] = lat
 		pVals[i][1] = lon
 		pVals[i][2] = mmi
+		//fmt.Println(i, ": ", lat, lon, mmi)
 	}
 
 	// split observed lines into array
