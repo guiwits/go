@@ -1,0 +1,41 @@
+{
+  "coord":{
+    "lon":-76.57,
+    "lat":39.11
+  },
+  "weather":[{
+    "id":800,
+    "main":"Clear",
+    "description":"clear sky",
+    "icon":"01d"
+  }],
+  "base":"stations",
+  "main":{
+    "temp":294.54,
+    "pressure":1015,
+    "humidity":16,
+    "temp_min":293.15,
+    "temp_max":296.15
+  },
+  "visibility":16093,
+  "wind":{
+    "speed":7.2,
+    "deg":270,
+    "gust":9.8
+  },
+  "clouds":{
+    "all":1
+  },
+  "dt":1489092300,
+  "sys":{
+    "type":1,
+    "id":1328,
+    "message":0.0063,
+    "country":"US",
+    "sunrise":1489058710,
+    "sunset":1489100901
+  },
+  "id":4364990,
+  "name":"Pasadena",
+  "cod":200
+}
