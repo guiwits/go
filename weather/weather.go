@@ -59,8 +59,8 @@ func main() {
 	// flags
 	var apiKey string
 	var cityId string
-	flag.StringVar(&apiKey, "key", "fffffffffffffffffffffff", "API Key from Openweather")
-	flag.StringVar(&cityId, "city", "5381396", "City ID fromOpenweather")
+	flag.StringVar(&apiKey, "key", "YourKeyFromOpenWeatherMapsDotCom", "API Key from Openweather")
+	flag.StringVar(&cityId, "city", "1111111", "City ID fromOpenweather")
 	flag.Parse()
 
 	var weather WeatherData
@@ -70,7 +70,6 @@ func main() {
 
 	var myClient = &http.Client{Timeout: 10 * time.Second}
 	// create reader to get URL request
-	//response, err := http.Get(weatherUrl) --> no timeout. bad.
 	response, err := myClient.Get(weatherUrl)
 	if err != nil {
 		log.Fatal(err)
@@ -84,25 +83,10 @@ func main() {
 
 	decodeErr := json.Unmarshal(body, &weather)
 	if decodeErr != nil {
-		fmt.Println("Error: ", decodeErr)
+		log.Fatal(decodeErr)
 	}
 	currentTemp := strconv.FormatFloat(weather.Main.Temp, 'f', -1, 64)
 	currentDesc := weather.Weather[0].Description
 	retVal := currentTemp + "°F : " + currentDesc
 	fmt.Print(retVal)
 }
-
-/*
-	fmt.Println(weather.Coord)
-	fmt.Println(weather.Weather)
-	fmt.Println(weather.Main)
-	fmt.Println(weather.Sys)
-	fmt.Println(weather.Base)
-	fmt.Println(weather.Clouds)
-	fmt.Println(weather.Visibility)
-	fmt.Println(weather.Wind)
-	fmt.Println(weather.Dt)
-	fmt.Println(weather.Id)
-	fmt.Println(weather.Name)
-	fmt.Println(weather.Cod)
-*/
