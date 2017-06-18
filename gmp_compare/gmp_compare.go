@@ -137,7 +137,7 @@ func main() {
 				}
 			}
 			// populate the true and false positive rates
-			if numTP[i]+numFN[i] != 0.0 {
+			if (numTP[i] + numFN[i]) != 0.0 {
 				truePR[i] = numTP[i] / (numTP[i] + numFN[i])
 				falsePR[i] = numFP[i] / (numTP[i] + numFN[i])
 			}
@@ -169,7 +169,7 @@ func main() {
 				}
 			}
 			// populate the true and false positive rates
-			if numTPT[i]+numFNT[i] != 0.0 {
+			if (numTPT[i] + numFNT[i]) != 0.0 {
 				truePRT[i] = numTPT[i] / (numTPT[i] + numFNT[i])
 				falsePRT[i] = numFPT[i] / (numTPT[i] + numFNT[i])
 			}
@@ -183,8 +183,7 @@ func main() {
 	fmt.Println(truePRT)
 	fmt.Println(falsePRT)
 
-	// remove references to slices
+	// remove references to slices; memory allocated earlier with make can now be garbage collected
 	pVals = nil
 	oVals = nil
-	// memory allocated earlier with make can now be garbage collected
 }
