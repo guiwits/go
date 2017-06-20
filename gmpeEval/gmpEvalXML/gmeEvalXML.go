@@ -17,7 +17,7 @@ type ShakemapGrid struct {
 	ShakemapOriginator       string                     `xml:"shakemap_originator,attr"`
 	MapStatus                string                     `xml:"map_status,attr"`
 	ShakemapEventType        string                     `xml:"shakemap_event_type,attr"`
-	SMEvent                  SMEvent                    `xml:"event_info"`
+	SMEvent                  SMEvent                    `xml:"event"`
 	GridSpecification        []GridSpecification        `xml:"grid_specification"`
 	EventSpecificUncertainty []EventSpecificUncertainty `xml:"event_specific_uncertainty"`
 	GridField                []GridField                `xml:"grid_field"`
@@ -26,26 +26,26 @@ type ShakemapGrid struct {
 
 // SMEvent struct will be an exported type
 type SMEvent struct {
-	EventID          string  `xml:"event_id"`
-	Magnitude        string  `xml:"magnitude"`
-	Depth            string  `xml:"depth"`
-	Lat              float64 `xml:"lat"`
-	Lon              float64 `xml:"lon"`
-	EventTimestamp   string  `xml:"event_timestamp"`
-	EventNetwork     string  `xml:"event_network"`
-	EventDescription string  `xml:"event_description"`
+	EventID          string  `xml:"event_id,attr"`
+	Magnitude        string  `xml:"magnitude,attr"`
+	Depth            string  `xml:"depth,attr"`
+	Lat              float64 `xml:"lat,attr"`
+	Lon              float64 `xml:"lon,attr"`
+	EventTimestamp   string  `xml:"event_timestamp,attr"`
+	EventNetwork     string  `xml:"event_network,attr"`
+	EventDescription string  `xml:"event_description,attr"`
 }
 
 // GridSpecification struct will be an exported type
 type GridSpecification struct {
-	LonMin            string `xml:"lon_min"`
-	LatMin            string `xml:"lat_min"`
-	LonMax            string `xml:"lon_max"`
-	LatMax            string `xml:"lat_max"`
-	NominalLonSpacing string `xml:"nominal_lon_spacing"`
-	NominalLatSpacing string `xml:"nominal_lat_spacing"`
-	Nlon              string `xml:"nlon"`
-	Nlat              string `xml:"nlat"`
+	LonMin            string `xml:"lon_min,attr"`
+	LatMin            string `xml:"lat_min,attr"`
+	LonMax            string `xml:"lon_max,attr"`
+	LatMax            string `xml:"lat_max,attr"`
+	NominalLonSpacing string `xml:"nominal_lon_spacing,attr"`
+	NominalLatSpacing string `xml:"nominal_lat_spacing,attr"`
+	Nlon              string `xml:"nlon,attr"`
+	Nlat              string `xml:"nlat,attr"`
 }
 
 // EventSpecificUncertainty struct will be an exported type
