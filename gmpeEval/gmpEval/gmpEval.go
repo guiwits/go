@@ -30,7 +30,7 @@ func distance(lat1, lon1, lat2, lon2 float64) float64 {
 
 // GmpEval -> main function for comparing 2 shakemap files
 func GmpEval(oLat float64, oLon float64, observedData []string, gridDirs []string,
-	gridMap map[string][]gmpEvalXML.ShakemapGrid, tolerance float64, aTime float64,
+	gridMap map[string][]gmpEvalXML.ShakemapGrid, alertTimes map[string][]float64, tolerance float64,
 	threshold float64, gmType string) (int, error) {
 	// default value for sWaveVelocity
 	var sWaveVelocity float64 = 3.0
@@ -39,11 +39,11 @@ func GmpEval(oLat float64, oLon float64, observedData []string, gridDirs []strin
 	fmt.Println(oLon)
 	fmt.Println(sWaveVelocity)
 	fmt.Println(tolerance)
-	fmt.Println(aTime)
 	fmt.Println(threshold)
 	fmt.Println(gmType)
 
 	for i := 0; i < len(gridDirs); i++ {
+		fmt.Println(alertTimes[gridDirs[i]])
 		smevt := gridMap[gridDirs[i]]
 		fmt.Println(smevt[0].ShakemapEventType)
 		fmt.Println(smevt[0].SMEvent.EventID)
